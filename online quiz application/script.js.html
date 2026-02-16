@@ -1,0 +1,89 @@
+script.js.html
+
+let questions=[
+
+{
+q:"HTML stands for?",
+options:[
+"Hyper Text Markup Language",
+"High Text Machine Language",
+"Hyper Tool Multi Language",
+"None"
+],
+answer:0
+},
+
+{
+q:"CSS used for?",
+options:[
+"Structure",
+"Styling",
+"Database",
+"Server"
+],
+answer:1
+},
+
+{
+q:"JavaScript is?",
+options:[
+"Programming Language",
+"Styling",
+"Database",
+"None"
+],
+answer:0
+}
+
+];
+
+let index=0;
+
+let score=0;
+
+showQuestion();
+
+function showQuestion(){
+
+document.getElementById("question").innerHTML=
+questions[index].q;
+
+document.getElementById("opt1").innerHTML=
+questions[index].options[0];
+
+document.getElementById("opt2").innerHTML=
+questions[index].options[1];
+
+document.getElementById("opt3").innerHTML=
+questions[index].options[2];
+
+document.getElementById("opt4").innerHTML=
+questions[index].options[3];
+
+}
+
+function checkAnswer(option){
+
+if(option==questions[index].answer){
+
+score++;
+
+}
+
+index++;
+
+if(index<questions.length){
+
+showQuestion();
+
+}
+
+else{
+
+localStorage.setItem("score",score);
+
+window.location="result.html";
+
+}
+
+}

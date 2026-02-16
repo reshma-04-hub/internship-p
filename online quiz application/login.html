@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Online Quiz Login</h2>
+
+<input type="text" id="username" placeholder="Enter Name"><br>
+
+<button onclick="login()">Start Quiz</button>
+
+</div>
+
+<script>
+
+function login(){
+
+let user=document.getElementById("username").value;
+
+localStorage.setItem("user",user);
+
+window.location="quiz.html";
+
+}
+
+</script>
+
+</body>
+</html>
